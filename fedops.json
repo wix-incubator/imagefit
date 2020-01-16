@@ -1,0 +1,11 @@
+{
+    "appName": "image-fit",
+    "notifications": {
+      "slack_channels": [
+        "fedops-urgent-default"
+      ]
+    },
+    "deploy_annotations": [
+      "image-fit"
+    ]
+  }
