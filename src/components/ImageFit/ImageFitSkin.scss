@@ -1,7 +1,7 @@
 .root {
   height: 100%;
   position: relative;
-
+  overflow: hidden;
   &.dragging{
     cursor: move;
   }

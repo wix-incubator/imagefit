@@ -23,7 +23,6 @@ class App extends React.Component<AppProps> {
             paddingTop: '20%',
             width: '400px',
             height: '200px',
-            overflow: 'hidden',
           }}
         >
           <ImageFit
