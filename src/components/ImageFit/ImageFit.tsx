@@ -5,6 +5,7 @@ import { ImageFitter } from './ImageFitter';
 interface ImageFitSkinProps {
   image: string;
   onSave(position: any): void;
+  initialPosition?: { x?: number; y?: number };
 }
 
 interface State {
@@ -22,9 +23,22 @@ export class ImageFit extends React.Component<ImageFitSkinProps, State> {
   private positionY: number = 50;
   private readonly imageFitter: ImageFitter = new ImageFitter();
 
+  constructor(props: Readonly<ImageFitSkinProps>) {
+    super(props);
+    this.setInitialPosition();
+  }
+
   componentDidMount(): void {
     if (this.imageRef.current) {
       this.imageFitter.setupDragging(this.imageRef.current);
+    }
+  }
+
+  private setInitialPosition() {
+    const { initialPosition } = this.props;
+    if (initialPosition && initialPosition.y !== null) {
+      const y = Number(initialPosition.y);
+      this.positionY = y >= 0 ? y : 50;
     }
   }
 

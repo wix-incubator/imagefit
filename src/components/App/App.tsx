@@ -33,6 +33,7 @@ class App extends React.Component<AppProps> {
             onSave={position => {
               console.log('Save position', position);
             }}
+            initialPosition={{ y: 0 }}
           />
         </div>
       </div>
