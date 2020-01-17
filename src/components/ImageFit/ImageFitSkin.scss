@@ -1,6 +1,10 @@
 .root {
-  background: red;
   height: 100%;
+  position: relative;
+
+  &.dragging{
+    cursor: move;
+  }
 }
 
 .imageFit {
@@ -8,4 +12,27 @@
   background-position-y: 50%;
   background-size: cover;
   height: 100%;
+}
+
+.saveControls {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.editControls {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.controlBtn {
+  border-radius: 6px;
+  &__primary{
+
+  }
+
+  &__secondary {
+
+  }
 }

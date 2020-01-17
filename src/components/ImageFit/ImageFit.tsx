@@ -52,16 +52,24 @@ export class ImageFit extends React.Component<ImageFitSkinProps, State> {
       backgroundImage: `url(${image})`,
       backgroundPositionY: `${this.positionY}%`,
     };
+    const { dragging } = this.state;
+    const className = `${s.root}${dragging ? ` ${s.dragging}` : ''}`;
     return (
-      <div className={s.root}>
-        {this.state.dragging ? (
-          <div>
-            <button onClick={this.onSave}>Save</button>
-            <button onClick={this.onCancel}>Cancel</button>
+      <div className={className}>
+        {dragging ? (
+          <div className={s.saveControls}>
+            <button className={s.controlBtn__secondary} onClick={this.onCancel}>
+              Cancel
+            </button>
+            <button className={s.controlBtn__primary} onClick={this.onSave}>
+              Save
+            </button>
           </div>
         ) : (
-          <div>
-            <button onClick={this.onStartDragging}>Drag</button>
+          <div className={s.editControls}>
+            <button className={s.controlBtn} onClick={this.onStartDragging}>
+              Edit
+            </button>
           </div>
         )}
         <div className={s.imageFit} style={style} ref={this.imageRef} />
