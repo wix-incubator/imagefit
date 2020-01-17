@@ -12,6 +12,7 @@
     "pretest": "yoshi build",
     "test": "yoshi test",
     "posttest": "yoshi lint",
+    "format": "yoshi lint --fix",
     "release": "yoshi release"
   },
   "husky": {
@@ -47,6 +48,7 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-i18next": "^7.11.0",
+    "rxjs": "^6.5.4",
     "@wix/wix-axios-config": "latest",
     "yoshi-template-intro": "^4.1.0"
   },

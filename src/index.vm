@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>${title}</title>
     <link type="image/png" href="https://www.wix.com/favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" href="${clientTopology.staticsBaseUrl}app#if(!${debug}).min#{end}.css">
@@ -11,19 +12,18 @@
     <script src="https://${clientTopology.staticsDomain}/polyfill/v2/polyfill#if(!${debug}).min#{end}.js?features=default,es6,es7,es2017&flags=gated&unknown=polyfill&rum=0"></script>
     <script src="https://${clientTopology.staticsDomain}/unpkg-semver/fedops-logger@5/fedops-logger.bundle.min.js"></script>
     <script>
-      fedopsLogger.reportAppLoadStarted("image-fit");
+        fedopsLogger.reportAppLoadStarted("image-fit");
     </script>
 
     <script src="https://${clientTopology.staticsDomain}/unpkg/react@16.8.6/umd/react#if(!${debug}).production.min#{else}.development#{end}.js"></script>
     <script src="https://${clientTopology.staticsDomain}/unpkg/react-dom@16.8.6/umd/react-dom#if(!${debug}).production.min#{else}.development#{end}.js"></script>
-  </head>
-  <body>
-    <div id="visit-count">Visit count: ${visitCount}</div>
-    <div id="root"></div>
-    <script>
-      window.__BASEURL__ = '${basename}';
-      window.__LOCALE__ = '${locale}';
-    </script>
-    <script src="${clientTopology.staticsBaseUrl}app.bundle#if(!${debug}).min#{end}.js"></script>
-  </body>
+</head>
+<body>
+<div id="root"></div>
+<script>
+    window.__BASEURL__ = '${basename}';
+    window.__LOCALE__ = '${locale}';
+</script>
+<script src="${clientTopology.staticsBaseUrl}app.bundle#if(!${debug}).min#{end}.js"></script>
+</body>
 </html>
